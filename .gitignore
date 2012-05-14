@@ -1,4 +1,3 @@
-/bin/
-/obj/
-/*.suo
-/*.sln
+[Bb]in
+[Oo]bj
+*.suo
