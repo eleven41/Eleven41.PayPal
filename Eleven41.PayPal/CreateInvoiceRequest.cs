@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Eleven41.PayPal
 {
+	[DataContract]
 	public class CreateInvoiceRequest
 	{
-		public RequestEnvelope requestEnvelope { get; set; }
-		public InvoiceType invoice { get; set; }
+		[DataMember(Name = "requestEnvelope")]
+		public RequestEnvelope RequestEnvelope { get; set; }
+
+		[DataMember(Name = "invoice")]
+		public InvoiceType Invoice { get; set; }
 	}
 }

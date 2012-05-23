@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Eleven41.PayPal
 {
+	[DataContract]
 	public class PaymentDetailsType
 	{
-		public bool viaPayPal { get; set; }
-		public PayPalPaymentDetailsType paypalPayment { get; set; }
-		public OtherPaymentDetailsType otherPayment { get; set; }
+		[DataMember(Name = "viaPayPal")]
+		public bool IsViaPayPal { get; set; }
+
+		[DataMember(Name = "paypalPayment")]
+		public PayPalPaymentDetailsType PayPalPayment { get; set; }
+
+		[DataMember(Name = "otherPayment")]
+		public OtherPaymentDetailsType OtherPayment { get; set; }
 	}
 }

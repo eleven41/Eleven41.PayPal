@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Eleven41.PayPal
 {
+	[DataContract]
 	public class ResponseEnvelope
 	{
-		public string ack { get; set; }
-		public string timestamp { get; set; }
-		public string correlationId { get; set; }
-		public string build { get; set; }
+		[DataMember(Name = "ack")]
+		public string Ack { get; set; }
+
+		[DataMember(Name = "timestamp")]
+		public string Timestamp { get; set; }
+
+		[DataMember(Name = "correlationId")]
+		public string CorrelationId { get; set; }
+
+		[DataMember(Name = "build")]
+		public string Build { get; set; }
 	}
 }

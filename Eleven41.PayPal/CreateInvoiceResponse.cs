@@ -2,19 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Eleven41.PayPal
 {
+	[DataContract]
 	public class CreateInvoiceResponse
 	{
-		public ResponseEnvelope responseEnvelope { get; set; }
-		public string invoiceID { get; set; }
-		public string invoiceNumber { get; set; }
-		public string invoiceURL { get; set; }
+		[DataMember(Name = "responseEnvelope")]
+		public ResponseEnvelope ResponseEnvelope { get; set; }
+
+		[DataMember(Name = "invoiceID")]
+		public string InvoiceId { get; set; }
+
+		[DataMember(Name = "invoiceNumber")]
+		public string InvoiceNumber { get; set; }
+
+		[DataMember(Name = "invoiceURL")]
+		public string InvoiceUrl { get; set; }
 	}
 
 	internal class CreateInvoiceResponseEx : CreateInvoiceResponse
 	{
-		public List<ResponseError> error { get; set; }
+		[DataMember(Name = "error")]
+		public List<ResponseError> Error { get; set; }
 	}
 }

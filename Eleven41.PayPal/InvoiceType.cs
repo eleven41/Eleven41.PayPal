@@ -2,22 +2,47 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Eleven41.PayPal
 {
+	[DataContract]
 	public class InvoiceType
 	{
-		public string merchantEmail { get; set; }
-		public string payerEmail { get; set; }
-		public int? number { get; set; }
-		public BusinessInfoType merchantInfo { get; set; }
-		public InvoiceItemListType itemList { get; set; }
-		public string currencyCode { get; set; }
-		public PaymentTerms paymentTerms { get; set; }
-		public double? discountPercent { get; set; }
-		public string merchantMemo { get; set; }
-		public BusinessInfoType billingInfo { get; set; }
-		public string logoUrl { get; set; }
-		public string note { get; set; }
+		[DataMember(Name = "merchantEmail")]
+		public string MerchantEmail { get; set; }
+
+		[DataMember(Name = "payerEmail")]
+		public string PayerEmail { get; set; }
+
+		[DataMember(Name = "number")]
+		public string Number { get; set; }
+
+		[DataMember(Name = "merchantInfo")]
+		public BusinessInfoType MerchantInfo { get; set; }
+
+		[DataMember(Name = "itemList")]
+		public InvoiceItemListType ItemList { get; set; }
+
+		[DataMember(Name = "currencyCode")]
+		public string CurrencyCode { get; set; }
+
+		[DataMember(Name = "paymentTerms")]
+		public PaymentTerms PaymentTerms { get; set; }
+
+		[DataMember(Name = "discountPercent")]
+		public double? DiscountPercent { get; set; }
+
+		[DataMember(Name = "merchantMemo")]
+		public string MerchantMemo { get; set; }
+
+		[DataMember(Name = "billingInfo")]
+		public BusinessInfoType BillingInfo { get; set; }
+
+		[DataMember(Name = "logoUrl")]
+		public string LogoUrl { get; set; }
+
+		[DataMember(Name = "note")]
+		public string Note { get; set; }
 	}
 }

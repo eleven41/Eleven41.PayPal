@@ -32,52 +32,52 @@ namespace Eleven41.PayPal
 
 		public CreateInvoiceResponse CreateInvoice(CreateInvoiceRequest request)
 		{
-			request.requestEnvelope = FixRequestEnvelope(request.requestEnvelope);
+			request.RequestEnvelope = FixRequestEnvelope(request.RequestEnvelope);
 
 			var response = Invoke<CreateInvoiceRequest, CreateInvoiceResponseEx>("CreateInvoice", request);
-			if (response.error != null &&
-				response.error.Count > 0)
+			if (response.Error != null &&
+				response.Error.Count > 0)
 			{
-				throw new Exception(response.error[0].message);
+				throw new Exception(response.Error[0].Message);
 			}
 			return response;
 		}
 
 		public CreateAndSendInvoiceResponse CreateAndSendInvoice(CreateAndSendInvoiceRequest request)
 		{
-			request.requestEnvelope = FixRequestEnvelope(request.requestEnvelope);
+			request.RequestEnvelope = FixRequestEnvelope(request.RequestEnvelope);
 			
 			var response = Invoke<CreateAndSendInvoiceRequest, CreateAndSendInvoiceResponseEx>("CreateAndSendInvoice", request);
-			if (response.error != null &&
-				response.error.Count > 0)
+			if (response.Error != null &&
+				response.Error.Count > 0)
 			{
-				throw new Exception(response.error[0].message);
+				throw new Exception(response.Error[0].Message);
 			}
 			return response;
 		}
 
 		public SendInvoiceResponse SendInvoice(SendInvoiceRequest request)
 		{
-			request.requestEnvelope = FixRequestEnvelope(request.requestEnvelope);
+			request.RequestEnvelope = FixRequestEnvelope(request.RequestEnvelope);
 
 			var response = Invoke<SendInvoiceRequest, SendInvoiceResponseEx>("SendInvoice", request);
-			if (response.error != null &&
-				response.error.Count > 0)
+			if (response.Error != null &&
+				response.Error.Count > 0)
 			{
-				throw new Exception(response.error[0].message);
+				throw new Exception(response.Error[0].Message);
 			}
 			return response;
 		}
 
 		public GetInvoiceDetailsResponse GetInvoiceDetails(GetInvoiceDetailsRequest request)
 		{
-			request.requestEnvelope = FixRequestEnvelope(request.requestEnvelope);
+			request.RequestEnvelope = FixRequestEnvelope(request.RequestEnvelope);
 
 			var response = Invoke<GetInvoiceDetailsRequest, GetInvoiceDetailsResponseEx>("GetInvoiceDetails", request);
-			if (response.error != null &&
-				response.error.Count > 0)
+			if (response.Error != null &&
+				response.Error.Count > 0)
 			{
-				throw new Exception(response.error[0].message);
+				throw new Exception(response.Error[0].Message);
 			}
 			return response;
 		}
@@ -86,8 +86,8 @@ namespace Eleven41.PayPal
 		{
 			if (requestEnvelope == null)
 				requestEnvelope = new RequestEnvelope();
-			if (String.IsNullOrEmpty(requestEnvelope.errorLanguage))
-				requestEnvelope.errorLanguage = "en_US";
+			if (String.IsNullOrEmpty(requestEnvelope.ErrorLanguage))
+				requestEnvelope.ErrorLanguage = "en_US";
 			return requestEnvelope;
 		}
 
