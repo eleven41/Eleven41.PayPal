@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Eleven41.PayPal</id>
+    <version>1.0.1</version>
+    <authors>Eleven41 Software</authors>
+    <owners>Eleven41 Software</owners>
+    <licenseUrl>https://github.com/eleven41/Eleven41.PayPal/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/eleven41/Eleven41.PayPal</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple PayPal clients for working with PayPal invoice API.</description>
+    <copyright>Copyright (c) 2013, Eleven41 Software</copyright>
+    <dependencies>
+      <dependency id="ServiceStack.Text" version="3.7.8" />
+    </dependencies>
+  </metadata>
+</package>

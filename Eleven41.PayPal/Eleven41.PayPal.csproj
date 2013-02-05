@@ -72,6 +72,7 @@
     <Compile Include="SendInvoiceResponse.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Eleven41.PayPal.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
