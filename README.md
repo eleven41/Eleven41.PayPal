@@ -16,3 +16,10 @@ Copyright (C) 2013, Eleven41 Software
 ## Requirements
 
 * Visual Studio 2012
+
+## API Methods Implemented
+
+* CreateInvoice
+* SendInvoice
+* CreateAndSendInvoice
+* GetInvoiceDetails
